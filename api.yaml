@@ -1,0 +1,85 @@
+providers:
+  - provider: Gemini
+    base_url: https://generativelanguage.googleapis.com/v1beta
+    api:
+      - AIzaSyCAqratvRL6dWb082i62hYDSOCNs8m8-c4
+      - AIzaSyDuboiVWFiS_sUaewlQ57cgLD4RdIEZj_8
+      - AIzaSyAJ2vpathvtvtYtSu6KAnhSavCqNtr9dWA
+    model:
+      - gemini-2.5-pro: gemini-2.5-pro
+      - gemini-flash-latest: gemini-2.5-flash
+      - gemini-flash-latest-lite: gemini-2.5-flash-lite
+    preferences:
+      post_body_parameter_overrides:
+        gemini-2.5-flash:
+          tools:
+            - google_search: {}
+            - url_context: {}
+        gemini-2.5-flash-lite:
+          tools:
+            - google_search: {}
+            - url_context: {}
+    tools: true
+    _model_dict_cache:
+      gemini-2.5-pro: gemini-2.5-pro
+      gemini-2.5-flash: gemini-flash-latest
+      gemini-2.5-flash-lite: gemini-flash-latest-lite
+  - provider: huan666
+    base_url: https://ai.huan666.de/v1/chat/completions
+    api: sk-qIEB38jOi1Mq9w3mzgt8ifDBNFMikmtsU1LLx1k1s1qKRv0a
+    model:
+      - grok-4.1
+      - grok-4.1-thinking
+      - claude-sonnet-4-5-20250929: claude-sonnet-4.5
+      - claude-haiku-4-5-20251001: claude-haiku-4.5
+      - grok-4-fast
+    tools: true
+    _model_dict_cache:
+      claude-sonnet-4.5: claude-sonnet-4-5-20250929
+      claude-haiku-4.5: claude-haiku-4-5-20251001
+      grok-4-fast: grok-4-fast
+  - provider: 生图
+    base_url: https://api.fastgpt.in/api/v1/chat/completions
+    api: fastgpt-xwRC0Ea1FFFFGR0xJZjhz0zTyGXuwJdbzhDt31igWvyYsLkWf1qZzhjXICt5
+    model:
+      - Flux.1
+    tools: true
+    _model_dict_cache:
+      Flux.1: Flux.1
+  - provider: TBAI
+    base_url: https://tbai.xin/v1/chat/completions
+    api: sk-3EOWmw7NjqOp2lBzY4AMfQISq5mPAgYNPAeCFQ5E6c3459Qj
+    model:
+      - gpt-4.1-mini
+      - gpt-4.1-nano
+    tools: true
+    _model_dict_cache:
+      gpt-4.1-mini: gpt-4.1-mini
+      gpt-4.1-nano: gpt-4.1-nano
+  - provider: cerebas
+    base_url: https://api.cerebras.ai/v1/chat/completions
+    api: csk-99324kjtdm624e6ptnxn8x23c3jhk3rnfft3expr6cj8nhnj
+    model:
+      - zai-glm-4.6: glm-4.6
+      - gpt-oss-120b
+      - qwen-3-235b-a22b-instruct-2507: qwen-3-235b-a22b-instruct
+      - qwen-3-235b-a22b-thinking-2507: qwen-3-235b-a22b-thinking
+    tools: true
+    _model_dict_cache:
+      glm-4.6: zai-glm-4.6
+      gpt-oss-120b: gpt-oss-120b
+      qwen-3-235b-a22b-instruct: qwen-3-235b-a22b-instruct-2507
+      qwen-3-235b-a22b-thinking: qwen-3-235b-a22b-thinking-2507
+api_keys:
+  - api: sk-cfsRYwl6qe2WKFc4exv7fqFDC7Zebfgt97HZZvbzxpwjACO
+    role: admin
+  - api: sk-g5F9kR7pL2sX8dN3bV6tM1hJ4qW0zAe
+    role: user-all
+  - api: sk-gAvnLUwCoBAIEfQ8AjFnM8PSmBhrH4oF
+    model:
+      - TBAI/gpt-4.1-mini
+      - TBAI/gpt-4.1-nano
+      - Gemini/gemini-2.5-flash
+      - Gemini/gemini-2.5-flash-lite
+      - GLM/glm-4.5-flash
+    role: 翻译
